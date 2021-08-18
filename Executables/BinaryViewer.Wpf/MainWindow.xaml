@@ -1,0 +1,71 @@
+﻿<Window x:Class="BinaryViewer.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BinaryViewer.Wpf"
+        xmlns:binaryViewer="clr-namespace:BinaryViewer;assembly=BinaryViewer"
+        mc:Ignorable="d"
+        Title="Binary Viewer" Height="538.5" Width="596">
+    <Window.InputBindings>
+        <KeyBinding Command="{Binding OpenCommand}" Key="O" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding SaveAsCommand}" Key="S" Modifiers="Ctrl+Shift" />
+        <KeyBinding Command="{Binding SaveCommand}" Key="S" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding ExitCommand}" Key="Q" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding FindCommand}" Key="F" Modifiers="Ctrl" />
+    </Window.InputBindings>
+    <Window.Resources>
+        <Style x:Key="collapsedHeaderStyle" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="Visibility" Value="Collapsed"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Menu DockPanel.Dock="Top" Height="20" VerticalAlignment="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="Open" Command="{Binding OpenCommand}" InputGestureText="Ctrl+O" ToolTip="View binary from a file" />
+                    <MenuItem Header="Save" Command="{Binding SaveCommand}" InputGestureText="Ctrl+S" ToolTip="Save the readable data to a file" />
+                    <MenuItem Header="Save As" Command="{Binding SaveAsCommand}" InputGestureText="Ctrl+Shift+S" ToolTip="Save the readable data to a file" />
+                    <Separator/>
+                    <MenuItem Header="_Exit" Command="{Binding ExitCommand}" InputGestureText="Ctrl+Q" ToolTip="Exit the application"/>
+                </MenuItem>
+                <MenuItem Header="_View">
+                    <MenuItem Header="Find" Command="{Binding FindCommand}" InputGestureText="Ctrl+F" ToolTip="Search for a value in the displayed data" />
+                    <MenuItem Header="Word Size">
+                        <local:RadioMenuItem Header="Byte (8)" GroupName="WordSize" Command="{Binding WordSizeCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplaySize.Byte}" />
+                        <local:RadioMenuItem Header="Short (16)" GroupName="WordSize" IsChecked="True" Command="{Binding WordSizeCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplaySize.Short}" />
+                        <local:RadioMenuItem Header="Int (32)" GroupName="WordSize" Command="{Binding WordSizeCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplaySize.Int}" />
+                        <local:RadioMenuItem Header="Long (64)" GroupName="WordSize" Command="{Binding WordSizeCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplaySize.Long}" />
+                    </MenuItem>
+                    <MenuItem Header="Display Format">
+                        <local:RadioMenuItem Header="Binary" GroupName="DisplayFormat" Command="{Binding WordFormatCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplayStyle.Binary}" />
+                        <local:RadioMenuItem Header="Hex" GroupName="DisplayFormat" IsChecked="True" Command="{Binding WordFormatCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplayStyle.Hex}" />
+                        <local:RadioMenuItem Header="Decimal (Signed)" GroupName="DisplayFormat" Command="{Binding WordFormatCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplayStyle.SignedDecimal}" />
+                        <local:RadioMenuItem Header="Decimal (Unsigned)" GroupName="DisplayFormat" Command="{Binding WordFormatCommand}" CommandParameter="{x:Static binaryViewer:BinaryDisplayStyle.UnsignedDecimal}" />
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <ListView ItemsSource="{Binding ByteArray.DisplayList}" SelectedIndex="{Binding ByteArray.SelectedIndex}" DockPanel.Dock="Top" Margin="0,0,0,0">
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{StaticResource collapsedHeaderStyle}">
+                        <GridViewColumn Header="#" Width="45">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding WordNumber}" Foreground="DarkGray"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Header="Word" Width="480">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding WordValue}" FontFamily="Courier New" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </DockPanel>
+
+    </Grid>
+</Window>

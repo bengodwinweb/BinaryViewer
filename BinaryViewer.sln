@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryViewer.Wpf", "Executables\BinaryViewer.Wpf\BinaryViewer.Wpf.csproj", "{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assemblies", "Assemblies", "{0BB61BC7-6CE5-44B6-B97F-5C630C5BFB74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AutomatedTests", "AutomatedTests", "{BFA3936E-2ED8-4E17-A372-F9CBABA77E30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executables", "Executables", "{DE2010EA-B37D-4D2C-AEFD-7A2EE8D2420B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryViewer", "Assemblies\BinaryViewer\BinaryViewer.csproj", "{3A685B15-61B2-41CD-8CE8-243D1DD15E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryViewer.Tests", "AutomatedTests\BinaryViewer.Tests\BinaryViewer.Tests.csproj", "{C1802D19-D29F-4E67-BB53-FAE585CD3428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryViewer.ModelView", "Assemblies\BinaryView.ModelView\BinaryViewer.ModelView.csproj", "{C1A2EB5E-CC70-4833-8730-F5A465A8E96C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A685B15-61B2-41CD-8CE8-243D1DD15E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A685B15-61B2-41CD-8CE8-243D1DD15E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A685B15-61B2-41CD-8CE8-243D1DD15E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A685B15-61B2-41CD-8CE8-243D1DD15E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1802D19-D29F-4E67-BB53-FAE585CD3428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1802D19-D29F-4E67-BB53-FAE585CD3428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1802D19-D29F-4E67-BB53-FAE585CD3428}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A2EB5E-CC70-4833-8730-F5A465A8E96C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1A2EB5E-CC70-4833-8730-F5A465A8E96C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1A2EB5E-CC70-4833-8730-F5A465A8E96C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1A2EB5E-CC70-4833-8730-F5A465A8E96C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7CD8480B-A88F-4DD6-8D9D-85EF8142B35B} = {DE2010EA-B37D-4D2C-AEFD-7A2EE8D2420B}
+		{3A685B15-61B2-41CD-8CE8-243D1DD15E63} = {0BB61BC7-6CE5-44B6-B97F-5C630C5BFB74}
+		{C1802D19-D29F-4E67-BB53-FAE585CD3428} = {BFA3936E-2ED8-4E17-A372-F9CBABA77E30}
+		{C1A2EB5E-CC70-4833-8730-F5A465A8E96C} = {0BB61BC7-6CE5-44B6-B97F-5C630C5BFB74}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBA4C94D-B1A6-4E9C-A793-F761B55EB12C}
+	EndGlobalSection
+EndGlobal

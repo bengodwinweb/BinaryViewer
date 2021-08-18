@@ -1,0 +1,20 @@
+﻿<Window x:Class="BinaryViewer.Wpf.OpenFileWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BinaryViewer.Wpf"
+        mc:Ignorable="d"
+        Title="Open File" Height="190.69" Width="286.881" ResizeMode="NoResize">
+    <Grid Margin="0,0,552,293">
+        <Label Content="File:" HorizontalAlignment="Left" Height="32" Margin="7,7,-39,-39" VerticalAlignment="Top" Width="32"/>
+        <TextBox x:Name="FileTextBox" HorizontalAlignment="Left" Height="23" Margin="38,9,-213,-32" TextWrapping="NoWrap" Text="{Binding OpenFileArguments.FileName}" VerticalAlignment="Top" Width="175" VerticalContentAlignment="Center"/>
+        <Button Content="Choose" HorizontalAlignment="Left" Click="ChooseActivated" Height="23" Margin="218,9,-269,-32" VerticalAlignment="Top" Width="51" VerticalContentAlignment="Center"/>
+        <Label Content="First Byte:" HorizontalAlignment="Left" Height="29" Margin="7,41,-68,-70" VerticalAlignment="Top" Width="61"/>
+        <Label Content="Bytes to Read:" HorizontalAlignment="Left" Height="29" Margin="7,73,-91,-102" VerticalAlignment="Top" Width="84"/>
+        <TextBox Text="{Binding OpenFileArguments.FirstByteString}" HorizontalAlignment="Left" Height="25" Margin="100,44,-213,-69" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" VerticalContentAlignment="Center"/>
+        <TextBox Text="{Binding OpenFileArguments.NumBytesString}"  HorizontalAlignment="Left" Height="25" Margin="100,74,-213,-99" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" VerticalContentAlignment="Center"/>
+        <Button Command="{Binding OpenCommand}" Content="Open" HorizontalAlignment="Left" Height="32" Margin="125,118,-194,-150" VerticalAlignment="Top" Width="69" Background="AliceBlue"/>
+        <Button Command="{Binding CancelCommand}" Content="Cancel" HorizontalAlignment="Left" Height="32" Margin="200,118,-269,-150" VerticalAlignment="Top" Width="69"/>
+    </Grid>
+</Window>
